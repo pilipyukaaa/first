@@ -10,7 +10,7 @@ stage('Prepare/Checkout') { // for display purposes
 stage('Build') {
   // Run the gradle build
   if (isUnix()) {
-     sh "echo hello"
+     sh "echo BUILD_NUMBER=${env.BUILD_NUMBER}"
   } else {
      sh "echo BUILD_NUMBER=${env.BUILD_NUMBER}"
   }
