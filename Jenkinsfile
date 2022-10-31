@@ -1,9 +1,6 @@
 #!/usr/bin/env groovy
 import hudson.model.*
 node {   
-def gradleHome
-def GIT_USERNAME = env.GIT_USERNAME
-def GIT_PASSWORD = env.GIT_PASSWORD
     
 stage('Prepare/Checkout') { // for display purposes
     dir('src') {
@@ -23,6 +20,6 @@ stage('Build') {
 }
 stage('push') {
 withCredentials([usernamePassword(credentialsId: '64c4d161-f7f3-45e7-8562-71ea1b28b26d', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
-    sh('echo $GIT_PASSWORD')
+    sh('echo GIT_PASSWORD')
 }
 }
