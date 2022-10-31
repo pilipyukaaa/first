@@ -18,8 +18,7 @@ stage('Build') {
   }
 }
 }
-stage('push') {
 withCredentials([string(credentialsId: 'GIT_PASSWORD', variable: 'TEXT')]) {
     sh('echo $GIT_PASSWORD')
-}
+
 }
