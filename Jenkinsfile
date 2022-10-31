@@ -1,4 +1,5 @@
-import hudson.FilePath
+#!/usr/bin/env groovy
+import hudson.model.*
 node {   
 def gradleHome
 
