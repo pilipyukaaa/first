@@ -12,7 +12,7 @@ stage('Build') {
   if (isUnix()) {
      sh "echo hello"
   } else {
-     sh "echo "BUILD_NUMBER=${env.BUILD_NUMBER}"
+     sh "echo BUILD_NUMBER=${env.BUILD_NUMBER}"
   }
 }
 }
