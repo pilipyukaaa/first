@@ -25,5 +25,3 @@ withCredentials([usernamePassword(credentialsId: '64c4d161-f7f3-45e7-8562-71ea1b
     sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@<REPO> --tags')
 }
 }
-
-print "Hello World!\n"
