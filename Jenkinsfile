@@ -8,7 +8,7 @@ stage('Build') {
 
   if (isUnix()) {
      sh "echo BUILD_NUMBER=${env.BUILD_NUMBER}"
-     sh "sed -i 's+\\(image: myrepo\\.com/myimage:0.0.\\)[.0-9]*+\\1$BUILD_NUMBER+' src/version.yml "
+     sh "sed -i 's/myimage:0.0.*/myimage:"$BUILD_NUMBER"/g' second/version.yml "
   } else {
      sh "echo BUILD_NUMBER=${env.BUILD_NUMBER}"
   }
