@@ -25,7 +25,7 @@ pipeline {
           sh 'cat src/second/version.yml'
           sh("cd src/second; git add version.yml")
           sh("cd src/second; git commit -m 'changed version to $BUILD_NUMBER by jenkins'")
-          sh('cd src/second; git push https://${GIT_USERNAME}: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@github.com/pilipyukaaa/second.git')
+          sh('cd src/second; git push https://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@github.com/pilipyukaaa/second.git')
         }
       }
     }
