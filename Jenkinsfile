@@ -6,7 +6,7 @@ pipeline {
       steps {
         dir('src') {
         withCredentials([usernamePassword(credentialsId: '64c4d161-f7f3-45e7-8562-71ea1b28b26d', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
-          sh('ls -la  ./*')
+          sh('rm -rf  ./*')
           sh('pwd')
           sh('git clone https://${GIT_USERNAME}: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@github.com/pilipyukaaa/second.git')
         }
