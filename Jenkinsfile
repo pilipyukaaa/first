@@ -17,6 +17,7 @@ pipeline {
       steps {
         sh "echo BUILD_NUMBER=${env.BUILD_NUMBER}"
         sh 'sed -i "s/myimage:0.0.*/myimage:$BUILD_NUMBER/g" src/second/version.yml'
+        sh 'cat src/second/version.yml'
       }
     }
     stage('push') {
