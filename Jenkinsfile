@@ -21,7 +21,7 @@ pipeline {
           sh("cd src/second; git config --global user.name '$GIT_USERNAME'")
           sh("cd src/second; git checkout change_version")
           sh "echo BUILD_NUMBER=${env.BUILD_NUMBER}"
-          sh 'sed -r "s/myimage:.+/myimage:$BUILD_NUMBER/g" src/second/version.yml'
+          sh 'sed -r "s/myimage:.+/myimage:$BUILD_NUMBER/g" src/second/version.yml > src/second/version.yml'
           sh 'cat src/second/version.yml'
           sh("cd src/second; git add version.yml")
           sh("cd src/second; git commit -m 'changed version to $BUILD_NUMBER by jenkins'")
